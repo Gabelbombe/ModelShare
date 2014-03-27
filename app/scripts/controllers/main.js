@@ -24,7 +24,18 @@ app.factory('AbstractResource', function($resource) {
 });
 
 app.factory('AbstractModel', function() {
-    var Model = function() {
-        
+    var Model = function(defaults, resource) {
+        this.data     = defaults;
+        this.resource = resource;
     };
+
+    Model.prototype.fetch = function() {
+        var self = this;
+
+        this.resource.query(function(result) {
+            self.data = result.data;
+        });
+    };
+
+    return Model;
 });
