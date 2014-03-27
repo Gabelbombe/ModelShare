@@ -74,3 +74,9 @@ app.controller('SessionController', function($scope, SessionModel) {
     };
 });
 
+/**
+ * Media controller
+ */
+app.controller.('MediaController', function($scope, SessionModel) {
+    $scope.SessionModel = SessionModel;
+});
