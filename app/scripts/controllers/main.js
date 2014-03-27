@@ -16,6 +16,9 @@ app.factory('DefaultResource', function($resource) {
         };
 
     return function(endpoint, params, options) {
-        
-    }
+        var url = baseURL + endpoint,
+            p = _.extend(params,  baseParams),
+            o = _.extend(options, baseOptions);
+        return $resource(url, p, o);
+    };
 });
