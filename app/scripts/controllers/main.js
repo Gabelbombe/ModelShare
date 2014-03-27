@@ -2,6 +2,9 @@
 
 var app = angular.module('modelshareApp');
 
+/**
+ * Our Abstract resource
+ */
 app.factory('AbstractResource', function($resource) {
     var baseURL = 'http://www.mocky.io',
         baseParams =  {
@@ -21,6 +24,9 @@ app.factory('AbstractResource', function($resource) {
     };
 });
 
+/**
+ * Our Abstract model
+ */
 app.factory('AbstractModel', function() {
     var Model = function(defaults, resource) {
         this.data     = defaults;
@@ -38,10 +44,23 @@ app.factory('AbstractModel', function() {
     return Model;
 });
 
+/**
+ * Session resources will be used to populate the Model(s)
+ */
 app.factory('SessionResource', function(AbstractResource) {
     var endpoint = '/v2/5334508f6c7507900e8e275c',
         params   = {},
         options  = {};
     return new AbstractResource(endpoint, params, options);
+});
+
+/**
+ * Session model will be shared with the Session and Media controllers
+ */
+app.factory('SessionModel', function(AbstractModel, SessionResource) {
+    var defaults = {
+        token: "#DefaultToken"
+    };
+    return new AbstractModel(defaults, SessionResource);
 });
 
