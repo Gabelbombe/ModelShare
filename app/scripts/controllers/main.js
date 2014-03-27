@@ -13,6 +13,9 @@ app.factory('DefaultResource', function($resource) {
             query: {
                 method: 'JSONP'
             }
-        }
+        };
 
+    return function(endpoint, params, options) {
+        
+    }
 });
