@@ -1,3 +1,4 @@
+/*global _:false */
 'use strict';
 
 var app = angular.module('modelshareApp');
@@ -8,7 +9,7 @@ var app = angular.module('modelshareApp');
 app.factory('AbstractResource', function($resource) {
     var baseURL = 'http://www.mocky.io',
         baseParams =  {
-          callback: 'JSON_CALLBACK'
+            callback: 'JSON_CALLBACK'
         },
         baseOptions = {
             query: {
@@ -59,7 +60,7 @@ app.factory('SessionResource', function(AbstractResource) {
  */
 app.factory('SessionModel', function(AbstractModel, SessionResource) {
     var defaults = {
-        token: "#DefaultToken"
+        token: '#DefaultToken'
     };
     return new AbstractModel(defaults, SessionResource);
 });
@@ -77,6 +78,6 @@ app.controller('SessionController', function($scope, SessionModel) {
 /**
  * Media controller
  */
-app.controller.('MediaController', function($scope, SessionModel) {
+app.controller('MediaController', function($scope, SessionModel) {
     $scope.SessionModel = SessionModel;
 });
