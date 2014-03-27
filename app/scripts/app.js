@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('modelshareApp', [
-  'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute'
