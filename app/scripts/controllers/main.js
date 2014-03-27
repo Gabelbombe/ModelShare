@@ -2,7 +2,6 @@
 
 var app = angular.module('modelshareApp');
 
-// http://www.mocky.io/v2/5334508f6c7507900e8e275c
 app.factory('AbstractResource', function($resource) {
     var baseURL = 'http://www.mocky.io',
         baseParams =  {
@@ -38,3 +37,11 @@ app.factory('AbstractModel', function() {
     };
     return Model;
 });
+
+app.factory('SessionResource', function(AbstractResource) {
+    var endpoint = '/v2/5334508f6c7507900e8e275c',
+        params   = {},
+        options  = {};
+    return new AbstractResource(endpoint, params, options);
+});
+
