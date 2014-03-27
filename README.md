@@ -20,4 +20,8 @@ Run `yo angular`, passing an app name:
 yo angular modelshare
 ```
 
+[//]: # If you receive the 'Error: EACCES, permission denied '/home/user/.config/configstore/update-notifier-yo.yml''
+[//]: # error, make sure to run sudo chown -R $USER:$USER ~/.config/configstore/update-notifier-yo.yml
+
+
 Run `grunt` for building and `grunt serve` for preview
