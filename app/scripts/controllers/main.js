@@ -64,3 +64,13 @@ app.factory('SessionModel', function(AbstractModel, SessionResource) {
     return new AbstractModel(defaults, SessionResource);
 });
 
+/**
+ * Session controller
+ */
+app.controller('SessionController', function($scope, SessionModel) {
+    $scope.SessionModel = SessionModel;
+    $scope.fetch = function() {
+        SessionModel.fetch();
+    };
+});
+
