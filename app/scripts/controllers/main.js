@@ -4,7 +4,6 @@ var app = angular.module('modelshareApp');
 
 // http://www.mocky.io/v2/5334508f6c7507900e8e275c
 app.factory('AbstractResource', function($resource) {
-
     var baseURL = 'http://www.mocky.io',
         baseParams =  {
           callback: 'JSON_CALLBACK'
@@ -29,6 +28,7 @@ app.factory('AbstractModel', function() {
         this.resource = resource;
     };
 
+    //NOTICE: private member is not accessible??
     Model.prototype.fetch = function() {
         var self = this;
 
@@ -36,6 +36,5 @@ app.factory('AbstractModel', function() {
             self.data = result.data;
         });
     };
-
     return Model;
 });
