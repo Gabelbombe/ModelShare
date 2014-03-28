@@ -15,7 +15,7 @@ bower install angular-sanitize
 Add a `<script>` to your `index.html`:
 
 ```html
-<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="/components/angular-sanitize/angular-sanitize.js"></script>
 ```
 
 And add `ngSanitize` as a dependency for your app:
