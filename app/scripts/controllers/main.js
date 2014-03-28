@@ -1,7 +1,7 @@
 /*global _:false */
 'use strict';
 
-var app = angular.module('modelshareApp');
+var app = angular.module('ModelShareApp');
 
 /**
  * Our Abstract resource
